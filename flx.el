@@ -72,7 +72,10 @@
 
 
 (defun flx-make-filename-cache ()
-  '(t))
+  (zerop 1))
+
+(defun flx-make-string-cache ()
+    (flx-make-filename-cache))
 
 (defun flx-score (str query &optional case)
   "Return best score matching QUERY against STR"
@@ -84,6 +87,7 @@
 
 ;;; reset value on every file load.
 (setq flx-file-cache (flx-make-filename-cache))
+
 
 (defvar flx-strings-cache nil
   "Cached heatmap info about filenames.")
